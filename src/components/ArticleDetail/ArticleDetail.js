@@ -35,6 +35,60 @@ export default class ArticleDetail extends React.Component {
     );
   }
 
+  renderTopArticleButton(article) {
+    return (
+      <div
+        className="backButtonTop"
+        onClick={Navigate.goToArticles.bind(this)}
+      >
+        &larr; Back to articles
+      </div>
+    );
+  }
+
+  renderMediaImage(article) {
+    return (
+      <div
+        className="mediaImage"
+        style={{backgroundImage: `url(${article.media_url})`}}
+      ></div>
+    );
+  }
+
+  renderAuthorRow(article) {
+    return (
+      <div className="authorRow">
+        <div
+          className="authorImage"
+          style={{backgroundImage: `url(${article.author.icon_url})`}}
+        ></div>
+        <div className="authorName">
+          <span className="articleBy">An article by</span> {article.author.name}
+        </div>
+      </div>
+    );
+  }
+
+  renderArticleTitle(article) {
+    <div className="articleTitle">
+      {article.title}
+      <span className="articleLikes">
+        {article.likes_count} likes
+      </span>
+    </div>
+  }
+
+  renderBackToArticlesButton() {
+    return (
+      <div
+        className="backButtonBottom"
+        onClick={Navigate.goToArticles.bind(this)}
+      >
+        &larr; Back to articles
+      </div>
+    );
+  }
+
   render() {
     const {article} = this.state;
 
@@ -44,42 +98,16 @@ export default class ArticleDetail extends React.Component {
 
     return (
       <div className="articleDetailContainer">
-        <div
-          className="backButtonTop"
-          onClick={Navigate.goToArticles.bind(this)}
-        >
-          &larr; Back to articles
-        </div>
+        {this.renderTopArticleButton(article)}
         <div className="innerArticleDetailContainer">
-          <div
-            className="mediaImage"
-            style={{backgroundImage: `url(${article.media_url})`}}
-          ></div>
-          <div className="authorRow">
-            <div
-              className="authorImage"
-              style={{backgroundImage: `url(${article.author.icon_url})`}}
-            ></div>
-            <div className="authorName">
-              <span className="articleBy">An article by</span> {article.author.name}
-            </div>
-          </div>
-          <div className="articleTitle">
-            {article.title}
-            <span className="articleLikes">
-              {article.likes_count} likes
-            </span>
-          </div>
+          {this.renderMediaImage(article)}
+          {this.renderAuthorRow(article)}
+          {this.renderArticleTitle(article)}
           {this.renderPublishedDate(article)}
           <div className="articleBody">
             {article.body}
           </div>
-          <div
-            className="backButtonBottom"
-            onClick={Navigate.goToArticles.bind(this)}
-          >
-            &larr; Back to articles
-          </div>
+          {this.renderBackToArticlesButton()}
         </div>
       </div>
     )
