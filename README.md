@@ -19,8 +19,6 @@ $ node server
 go to [http://localhost:4000](http://localhost:4000) in browser
 
 
-What my solution has:
-
 ### Technologies Used:
 
 ReactJS
