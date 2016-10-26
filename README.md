@@ -1,8 +1,17 @@
 ```
 $ git clone <git_url>
 ```
-$ cd MedCircle
-$ npm install
-$ node server
 
-go to http://localhost:4000 in browser
+```
+$ cd MedCircle
+```
+
+```
+$ npm install
+```
+
+```
+$ node server
+```
+
+go to [http://localhost:4000](http://localhost:4000) in browser
