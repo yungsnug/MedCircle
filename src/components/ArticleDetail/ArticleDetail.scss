@@ -38,6 +38,8 @@
     .authorRow {
       padding: 20px;
       background-color: $lighterGray;
+      @include borderBottom;
+      margin-bottom: 18px;
     }
 
     .authorImage {
@@ -88,6 +90,7 @@
       margin-bottom: 10px;
       font-size: 13px;
       color: $black;
+      font-style: italic;
     }
 
     .articleBody {
