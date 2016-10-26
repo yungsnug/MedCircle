@@ -7,15 +7,11 @@ var config = require('./webpack.config.js');
 
 var bodyParser = require('body-parser'); // for reading POSTed form data into `req.body`
 var session = require('express-session');
-// var cookieParser = require('cookie-parser'); // the session is stored in a cookie, so we use this to parse it
 
 var isDeveloping = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 4000;
 var app = express();
 
-// app.use(cookieParser());
-// app.use(expressSession({secret:'somesecrettokenhere'}));
-// app.use(bodyParser());
 app.use(session({
   resave: false, // don't save session if unmodified
   saveUninitialized: false, // don't create session until something stored

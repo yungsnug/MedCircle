@@ -99,9 +99,8 @@ $mont: 'Montserrat', sans-serif;
 @mixin h1 {
   @include mont;
   font-size: 27px;
-  color: $gray;
+  color: $black;
   letter-spacing: 1.49px;
-  line-height: 33px;
   font-weight: 700;
 }
 
@@ -152,4 +151,20 @@ $mont: 'Montserrat', sans-serif;
   width: 90%;
   word-wrap: break-word;
   margin-left: 40px;
+}
+
+$phone: 414px;
+$tablet: 768px;
+$laptop: 1024px;
+
+@mixin styleFor($screen) {
+  @if $screen == phone {
+    @media only screen and (max-width: $phone) { @content; }
+  }
+  @else if $screen == tablet {
+    @media only screen and (max-width: $tablet) { @content; }
+  }
+  @else if $screen == laptop {
+    @media only screen and (max-width: $laptop) { @content; }
+  }
 }

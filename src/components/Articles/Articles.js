@@ -5,10 +5,6 @@ import Modal from 'elements/Modal/Modal.js'
 import Api from 'modules/Api'
 
 export default class Articles extends React.Component {
-  static propTypes = {
-    // dummy: React.PropTypes.object.isRequired,
-  }
-
   constructor(props) {
     super(props);
 

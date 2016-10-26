@@ -65,5 +65,5 @@ class Route {
 }
 
 var Api = module.exports = {
-  db: new Route('https://medcircle-coding-project.s3.amazonaws.com/api'),
+  db: new Route(Url.medCircleUrl),
 }

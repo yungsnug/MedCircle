@@ -2,5 +2,50 @@
 @import "~assets/scss/global.scss";
 
 .modalContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  z-index: 100;
 
+  .closeButton {
+    padding-left: 10px;
+    padding-top: 10px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.6;
+    position: fixed;
+    &:hover {
+      text-decoration: underline;
+      opacity: 1;
+    }
+    @include styleFor(tablet) {
+      z-index: 1000;
+      background-color: $red;
+      opacity: 1;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  .modalContent {
+    border-radius: $radius;
+    overflow: hidden;
+    max-width: 700px;
+    border-radius: $radius;
+    width: 100%;
+    background-color: $lightestGray;
+    @include flexCenter;
+    @include absoluteXCenter;
+    top: 30%;
+    @include outerShadow;
+    box-sizing: border-box;
+    margin-bottom: 60px;
+  }
 }

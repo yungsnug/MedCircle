@@ -64,8 +64,8 @@
 
     .articleTitle {
       padding: 30px;
-      padding-bottom: 20px;
-      @include flexCenter;
+      padding-bottom: 10px;
+      text-align: center;
       @include h1;
       color: $black;
       @include borderTop;
@@ -75,7 +75,19 @@
         @include p;
         color: $red;
         font-weight: 400;
+        @include styleFor(phone) {
+          display: block;
+          margin-left: 0;
+          margin-top: 10px;
+        }
       }
+    }
+
+    .publishedDate {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: $black;
     }
 
     .articleBody {

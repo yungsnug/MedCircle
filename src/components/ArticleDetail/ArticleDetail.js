@@ -1,6 +1,8 @@
 import s from 'ArticleDetail/ArticleDetail.scss'
 import Api from 'modules/Api.js'
+import Navigate from 'modules/Navigate.js'
 import {browserHistory} from 'react-router'
+import dateFormat from 'dateformat'
 
 export default class ArticleDetail extends React.Component {
   constructor(props) {
@@ -25,8 +27,12 @@ export default class ArticleDetail extends React.Component {
     })
   }
 
-  goToArticles() {
-    browserHistory.push('/articles')
+  renderPublishedDate(article) {
+    return (
+      <div className="publishedDate">
+        Published on: {dateFormat(article.published_at, "mmmm dS, yyyy")}
+      </div>
+    );
   }
 
   render() {
@@ -41,7 +47,7 @@ export default class ArticleDetail extends React.Component {
       <div className="articleDetailContainer">
         <div
           className="backButtonTop"
-          onClick={this.goToArticles.bind(this)}
+          onClick={Navigate.goToArticles.bind(this)}
         >
           &larr; Back to articles
         </div>
@@ -65,12 +71,13 @@ export default class ArticleDetail extends React.Component {
               {article.likes_count} likes
             </span>
           </div>
+          {this.renderPublishedDate(article)}
           <div className="articleBody">
             {article.body}
           </div>
           <div
             className="backButtonBottom"
-            onClick={this.goToArticles.bind(this)}
+            onClick={Navigate.goToArticles.bind(this)}
           >
             &larr; Back to articles
           </div>

@@ -1,5 +1,28 @@
 @import "~assets/scss/vars.scss";
 
 .articleModalContainer {
+  .articleTitle {
+    text-align: center;
+    padding: 20px 30px;
+    @include borderBottom;
+    background-color: $lighterGray;
+    margin-bottom: 20px;
+  }
 
+  .articleBody {
+    padding: 0 30px;
+    padding-bottom: 20px;
+  }
+
+  .seeFullArticleButton {
+    @include borderTop;
+    background-color: $lighterGray;
+    padding: 20px;
+    text-align: center;
+    color: $red;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

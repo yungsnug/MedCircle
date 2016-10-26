@@ -1,5 +1,13 @@
 @import "~assets/scss/vars.scss";
 
 .articlesContainer {
+  max-width: 850px;
+  @include centerBlock;
+  padding: 20px;
 
+  .articleRowContainer {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
 }

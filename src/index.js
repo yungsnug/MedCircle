@@ -6,7 +6,7 @@ import ArticleDetail from 'components/ArticleDetail/ArticleDetail.js'
 
 render((
   <Router history={browserHistory}>
-    <Route path="/" component={App} /*onEnter={checkSession}*/>
+    <Route path="/" component={App}>
       <IndexRoute component={Articles} />
       <Route path="articles" component={Articles} />
       <Route path="article/:articleId" component={ArticleDetail} />
