@@ -1,17 +1,15 @@
 import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import App from 'components/App/App.js'
-import FirstComponent from 'components/FirstComponent/FirstComponent.js'
-// import MyComponent from 'components/MyComponent/MyComponent.js'
-
-import Api from 'modules/Api.js'
-import Session from 'modules/Session.js'
+import Articles from 'components/Articles/Articles.js'
+import ArticleDetail from 'components/ArticleDetail/ArticleDetail.js'
 
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App} /*onEnter={checkSession}*/>
-      <IndexRoute component={FirstComponent} />
-      <Route path="component" component={FirstComponent} />
+      <IndexRoute component={Articles} />
+      <Route path="articles" component={Articles} />
+      <Route path="article/:articleId" component={ArticleDetail} />
     </Route>
   </Router>
 ), document.getElementById("app"));

@@ -1,6 +1,6 @@
-import s from 'FirstComponent/FirstComponent.scss'
+import s from 'elements/Modal/Modal.scss'
 
-export default class FirstComponent extends React.Component {
+export default class  extends React.Component {
   static propTypes = {
     dummy: React.PropTypes.object.isRequired,
   }
@@ -19,8 +19,7 @@ export default class FirstComponent extends React.Component {
     var st = this.state;
     var pr = this.props;
     return (
-      <div className="firstComponentContainer">
-        SUCCESS!
+      <div className="modalContainer">
       </div>
     )
   }

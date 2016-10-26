@@ -11,6 +11,13 @@ class Route {
 
     return $.post(this.baseUrl + url, data);
   }
+  get(url, data) {
+    if(arguments.length == 1) {
+      return $.get(this.baseUrl + url);
+    }
+
+    return $.get(this.baseUrl + url, data);
+  }
   create(model, data) {
     return $.post(this.baseUrl + model + '/create', data);
   }
@@ -57,26 +64,6 @@ class Route {
   }
 }
 
-function chooseUrl(routeType){
-  //XXX: Find a way to remove .com
-  var domain = window.location.hostname.match(/(http(s)?:\/\/)?(www\.)?(.+)(\.com)?/);
-  switch(domain[4]){
-    case "localhost":
-      return Url[`${routeType}Stable`];
-    case `quizzly-${routeType.toLowerCase()}-dev.herokuapp.com`:
-      return Url[`${routeType}Stable`];
-    case `quizzly-${routeType.toLowerCase()}-prod.herokuapp.com`:
-      return Url[`${routeType}Stable`];
-    case `quizzly-${routeType.toLowerCase()}-demo.herokuapp.com`:
-      return Url[`${routeType}Demo`];
-    default:
-      return Url[`${routeType}Stable`];
-  }
-}
-
 var Api = module.exports = {
-  server: new Route(""),
-  db: new Route(window.location.port == '4000' ? 'http://localhost:1337' : 'https://payflowapidemo.azurewebsites.net/'),
-  otherDb: new Route(chooseUrl("redPay")),
-  baseUrl: window.location.port == '4000' ? 'http://localhost:1337' : 'https://payflowapidemo.azurewebsites.net/',
+  db: new Route('https://medcircle-coding-project.s3.amazonaws.com/api'),
 }
