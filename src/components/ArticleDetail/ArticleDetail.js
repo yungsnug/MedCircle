@@ -36,8 +36,7 @@ export default class ArticleDetail extends React.Component {
   }
 
   render() {
-    var {article} = this.state;
-    var pr = this.props;
+    const {article} = this.state;
 
     if(!article) {
       return null;

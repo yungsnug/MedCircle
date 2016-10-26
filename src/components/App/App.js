@@ -3,19 +3,8 @@ import Api from 'modules/Api.js'
 import {browserHistory} from 'react-router'
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    }
-  }
-
-  componentDidMount() {
-  }
-
   render() {
-    var st = this.state;
-    var pr = this.props;
+    const pr = this.props;
 
     var props = {};
 

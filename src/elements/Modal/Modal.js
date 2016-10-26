@@ -22,7 +22,6 @@ export default class  extends React.Component {
   }
 
   render() {
-    var st = this.state;
     const {content} = this.props;
     return (
       <div className="modalContainer">

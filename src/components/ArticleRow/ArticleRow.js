@@ -8,16 +8,6 @@ export default class ArticleRow extends React.Component {
     showArticleModal: React.PropTypes.func.isRequired,
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    }
-  }
-
-  componentDidMount() {
-  }
-
   formatArticleDate(date) {
     return dateFormat(date, "mmmm dS, yyyy")
   }
@@ -31,7 +21,6 @@ export default class ArticleRow extends React.Component {
   }
 
   render() {
-    const st = this.state;
     const {
       article,
     } = this.props;

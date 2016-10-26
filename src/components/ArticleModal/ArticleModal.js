@@ -30,7 +30,6 @@ export default class ArticleModal extends React.Component {
     })
   }
 
-
   renderArticleModalContent() {
     var {
       article
@@ -55,7 +54,6 @@ export default class ArticleModal extends React.Component {
   }
 
   render() {
-    var st = this.state;
     var {
       article
     } = this.props;
