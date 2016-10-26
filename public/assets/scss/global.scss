@@ -8,10 +8,11 @@
 @import "text";
 @import "components";
 
-// body {
-//   background-color: $colorThree;
-//   background: $colorThree;
-//   color: $textOne;
-// }
+body {
+  background-color: $red;
+  background: $red;
+  color: $black;
+  @include p;
+}
 
 h1, h2, h3, h4, h5, h6, p, small, title { margin: 0; }

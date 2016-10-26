@@ -3,15 +3,11 @@ import Api from 'modules/Api.js'
 import {browserHistory} from 'react-router'
 
 export default class ArticleDetail extends React.Component {
-  static propTypes = {
-    // dummy: React.PropTypes.object.isRequired,
-  }
-
   constructor(props) {
     super(props);
 
     this.state = {
-      article: {}
+      article: null
     }
   }
 
@@ -37,10 +33,48 @@ export default class ArticleDetail extends React.Component {
     var {article} = this.state;
     var pr = this.props;
 
+    if(!article) {
+      return null;
+    }
+
     return (
       <div className="articleDetailContainer">
-        <div onClick={this.goToArticles.bind(this)}>Back to articles</div>
-        <div>{article.title}</div>
+        <div
+          className="backButtonTop"
+          onClick={this.goToArticles.bind(this)}
+        >
+          &larr; Back to articles
+        </div>
+        <div className="innerArticleDetailContainer">
+          <div
+            className="mediaImage"
+            style={{backgroundImage: `url(${article.media_url})`}}
+          ></div>
+          <div className="authorRow">
+            <div
+              className="authorImage"
+              style={{backgroundImage: `url(${article.author.icon_url})`}}
+            ></div>
+            <div className="authorName">
+              <span className="articleBy">An article by</span> {article.author.name}
+            </div>
+          </div>
+          <div className="articleTitle">
+            {article.title}
+            <span className="articleLikes">
+              {article.likes_count} likes
+            </span>
+          </div>
+          <div className="articleBody">
+            {article.body}
+          </div>
+          <div
+            className="backButtonBottom"
+            onClick={this.goToArticles.bind(this)}
+          >
+            &larr; Back to articles
+          </div>
+        </div>
       </div>
     )
   }

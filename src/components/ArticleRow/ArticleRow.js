@@ -26,9 +26,12 @@ export default class ArticleRow extends React.Component {
     const {
       article,
     } = this.props;
+    console.log("article", article);
     return (
       <div className="articleRowContainer">
-        <div onClick={this.goToArticle.bind(this)}>{article.title}</div>
+        <div onClick={this.goToArticle.bind(this)}>
+          {article.title}
+        </div>
         <div onClick={this.props.showArticleModal.bind(this, article)}>
           Show
         </div>

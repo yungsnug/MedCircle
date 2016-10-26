@@ -1,5 +1,99 @@
 @import "~assets/scss/vars.scss";
 
 .articleDetailContainer {
+  padding: 40px 20px;
 
+  .backButton {
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .backButtonTop {
+    @extend .backButton;
+    padding: 10px;
+    color: $lightestGray;
+  }
+
+  .innerArticleDetailContainer {
+    max-width: 850px;
+    width: 100%;
+    @include centerBlock;
+    // background-color: red;
+    border-radius: $radius;
+    overflow: hidden;
+    @include outerShadow;
+    background-color: $lightestGray;
+
+    .mediaImage {
+      height: 400px;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      @include borderBottom;
+    }
+
+    .authorRow {
+      padding: 20px;
+      background-color: $lighterGray;
+    }
+
+    .authorImage {
+      width: 150px;
+      height: 150px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 100%;
+      @include outerShadow;
+      @include centerBlock;
+    }
+
+    .authorName {
+      text-align: center;
+      color: $red;
+      font-weight: 400;
+      font-size: 18px;
+      margin-top: 10px;
+      > .articleBy {
+        color: $black;
+        font-weight: 300;
+      }
+    }
+
+    .articleTitle {
+      padding: 30px;
+      padding-bottom: 20px;
+      @include flexCenter;
+      @include h1;
+      color: $black;
+      @include borderTop;
+      .articleLikes {
+        font-style: italic;
+        margin-left: 10px;
+        @include p;
+        color: $red;
+        font-weight: 400;
+      }
+    }
+
+    .articleBody {
+      @include p;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+      @include borderBottom;
+    }
+
+    .backButtonBottom {
+      @extend .backButton;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-color: $lighterGray;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
 }
