@@ -1,4 +1,6 @@
+```
 $ git clone <git_url>
+```
 $ cd MedCircle
 $ npm install
 $ node server
