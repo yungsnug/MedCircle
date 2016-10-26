@@ -37,7 +37,7 @@ React Router for Single Page Application
 
 ### What I Accomplished
 
-My solution hits everything mentioned on the design doc––including mobile responsiveness and a "unique and creative" to browse the info (using a Modal preview)
+My solution hits everything mentioned on the design doc––including mobile responsiveness and a "unique and creative" way to browse the articles (using a little Modal preview)
 
 ### Time Elapsed
 
